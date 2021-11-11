@@ -1,0 +1,86 @@
+[
+  {
+    "bookName": "HarryPotter",
+    "year": 2006,
+    "price": 1000,
+    "bookId": 1
+  },
+  {
+    "bookName": "Rose",
+    "year": 2006,
+    "price": 2000,
+    "bookId": 2
+  },
+  {
+    "bookName": "Violet",
+    "year": 2006,
+    "price": 3000,
+    "bookId": 3
+  },
+  {
+    "bookName": "Jujutsu Kaisen",
+    "year": 2006,
+    "price": 4000,
+    "bookId": 4
+  },
+  {
+    "bookName": "Dragon Ball Super",
+    "year": 2006,
+    "price": 5000,
+    "bookId": 5
+  },
+  {
+    "bookName": "Attack on Titans",
+    "year": 2006,
+    "price": 6000,
+    "bookId": 6
+  },
+  {
+    "bookName": "Naruto",
+    "year": 2006,
+    "bookId": 7,
+    "price": 7000
+  },
+  {
+    "bookName": "Naruto Shippuden",
+    "year": 2006,
+    "bookId": 8,
+    "price": 8000
+  },
+  {
+    "bookName": "Hunter X Hunter",
+    "year": 2006,
+    "price": 9000,
+    "bookId": 9
+  },
+  {
+    "bookName": "Super Natural",
+    "year": 2006,
+    "price": 10000,
+    "bookId": 10
+  },
+  {
+    "bookName": "Rainbow",
+    "year": 2006,
+    "price": 11000,
+    "bookId": 11
+  },
+  {
+    "bookName": "Sukuna",
+    "year": 2006,
+    "price": 12000,
+    "bookId": 12
+  },
+  {
+    "bookName": "Murder",
+    "year": 2006,
+    "price": 13000,
+    "bookId": 1
+  },
+  {
+    "bookName": "Kimetsu no Yaiba",
+    "year": 2006,
+    "price": 14000,
+    "bookId": 14
+  }
+]
