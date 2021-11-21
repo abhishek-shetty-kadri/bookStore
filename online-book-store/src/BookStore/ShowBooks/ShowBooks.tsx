@@ -6,8 +6,10 @@ import logo from "../../logo.svg";
 import { RootStoreProvider } from "../..";
 import ModalWindow from "../../ModalWindow/Modal";
 import AddBook from "./AddBook";
+import React from "react";
+import { BookType } from "../../store/book-store";
 
-const ShowBooks = ({ history }) => {
+const ShowBooks = () => {
   const {
     bookStore: { allBooks, isbooksFetching, fetchBooks },
     cartStore: { addItemToCart },
@@ -22,7 +24,7 @@ const ShowBooks = ({ history }) => {
   const [search, setsearch] = useState("");
   const [addBookDialog,setAddBookDialog]=useState(false)
 
-  const addABook=(data)=>{
+  const addABook=(data:BookType)=>{
     allBooks?.push({bookId:allBooks.length+1,...data})
   }
   return (
@@ -53,8 +55,8 @@ const ShowBooks = ({ history }) => {
       <div className="books-container">
         {allBooks &&
           allBooks
-            .filter((x) => x.bookName.includes(search))
-            .map((book, index) => {
+            .filter((x:BookType) => x.bookName.includes(search))
+            .map((book:BookType, index:number) => {
               return (
                 <div className="books-wrapper" key={index}>
                   <img src={logo} alt={"img"} />

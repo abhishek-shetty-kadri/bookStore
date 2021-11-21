@@ -1,15 +1,23 @@
+import React from "react";
 import { useRef, useState } from "react";
 import "./AddBook.css";
 
-const AddBook = ({ setAddBookDialog, addABook }) => {
+type Props = {
+  addABook: Function;
+  setAddBookDialog: Function;
+};
+
+const AddBook = ({ setAddBookDialog, addABook }: Props) => {
   const [bookName, setBookName] = useState("");
   const [year, setYear] = useState("");
-  const [price, setPrice] = useState();
-  const status = useRef({});
+  const [price, setPrice] = useState("");
+  const status = useRef<HTMLParagraphElement>(null);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
-    status.current.innerHTML = "Added Successfully!!!";
+    if (status && status.current) {
+      status.current.innerHTML = "Added Successfully!!!";
+    }
     addABook({ bookName, year, price });
     setTimeout(() => setAddBookDialog(false), 800);
   };
@@ -72,7 +80,7 @@ const AddBook = ({ setAddBookDialog, addABook }) => {
             backgroundColor: "skyblue",
             color: "black",
             borderColor: "transparent",
-            borderRadius: '20px'
+            borderRadius: "20px",
           }}
         />
       </form>

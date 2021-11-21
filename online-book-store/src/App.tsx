@@ -5,6 +5,7 @@ import { observer } from "mobx-react-lite";
 import Cart from "./BookStore/Cart/Cart";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import CartPage from "./BookStore/CartPage";
+import React from "react";
 
 function App() {
   return (
