@@ -4,11 +4,13 @@ import Loader from "../../Loader/Loader";
 import "./ShowBooks.scss";
 import logo from "../../logo.svg";
 import { RootStoreProvider } from "../..";
+import ModalWindow from "../../ModalWindow/Modal";
+import AddBook from "./AddBook";
 
-const ShowBooks = ({history}) => {
+const ShowBooks = ({ history }) => {
   const {
-    bookStore: { allBooks, isbooksFetching, fetchBooks, addBook },
-    cartStore:{addItemToCart}
+    bookStore: { allBooks, isbooksFetching, fetchBooks },
+    cartStore: { addItemToCart },
   } = useContext(RootStoreProvider);
 
   useEffect(() => {
@@ -18,18 +20,35 @@ const ShowBooks = ({history}) => {
   }, [allBooks, isbooksFetching, fetchBooks]);
 
   const [search, setsearch] = useState("");
-console.log('History',history)
+  const [addBookDialog,setAddBookDialog]=useState(false)
+
+  const addABook=(data)=>{
+    allBooks?.push({bookId:allBooks.length+1,...data})
+  }
   return (
     <>
       {isbooksFetching && <Loader />}
-      <div className='search-header'>
+      {
+        addBookDialog&&(
+          <ModalWindow setAddBookDialog={setAddBookDialog}>
+            <AddBook setAddBookDialog={setAddBookDialog} addABook={addABook}/>
+          </ModalWindow>
+        )
+      }
+      <div className="search-header">
         <input
           type="text"
-          placeholder='Search your Book'
+          placeholder="Search your Book"
           value={search}
           onChange={(e) => setsearch(e.target.value)}
         />
-        <button onClick={() => addBook()}>Add</button>
+        <button
+          onClick={() => {
+            setAddBookDialog(true)
+          }}
+        >
+          Add
+        </button>
       </div>
       <div className="books-container">
         {allBooks &&
@@ -51,7 +70,7 @@ console.log('History',history)
                     <span>{"Published:"}</span>
                     {book.year}
                   </p>
-                  <button onClick={()=>addItemToCart(1)}>Add to Cart</button>
+                  <button onClick={() => addItemToCart(1)}>Add to Cart</button>
                 </div>
               );
             })}
