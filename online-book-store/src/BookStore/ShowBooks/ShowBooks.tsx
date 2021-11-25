@@ -1,19 +1,23 @@
 import { observer } from "mobx-react-lite";
-import { useContext, useEffect, useState } from "react";
+import {  useEffect, useState } from "react";
 import Loader from "../../Loader/Loader";
 import "./ShowBooks.scss";
 import logo from "../../logo.svg";
-import { RootStoreProvider } from "../..";
 import ModalWindow from "../../ModalWindow/Modal";
 import AddBook from "./AddBook";
 import React from "react";
 import { BookType } from "../../store/book-store";
+import  str from "../../store/rootStore";
 
 const ShowBooks = () => {
+
+  let store = str;
+
+
   const {
     bookStore: { allBooks, isbooksFetching, fetchBooks },
     cartStore: { addItemToCart },
-  } = useContext(RootStoreProvider);
+  }:any=store
 
   useEffect(() => {
     if (!isbooksFetching && !allBooks) {

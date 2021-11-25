@@ -42,5 +42,5 @@ export type BookType ={
   year:number
 }
 
-const bookStore = new BookStore();
-export default bookStore;
+
+export default BookStore;

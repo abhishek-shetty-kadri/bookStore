@@ -1,20 +1,17 @@
-import React, { createContext } from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import RootStore from './store/rootStore';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
 
-export const RootStoreProvider=createContext()
-let store=new RootStore()
 
 ReactDOM.render(
   <React.StrictMode>
-    <RootStoreProvider.Provider value={store}>
-    <App />
-    </RootStoreProvider.Provider>
+    
+      <App />
+    
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function
