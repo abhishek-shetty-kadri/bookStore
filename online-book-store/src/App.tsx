@@ -10,13 +10,11 @@ import React from "react";
 function App() {
   return (
     <div className="background">
-      
       <Router>
-      <Cart />
+        <Cart />
         <Routes>
-        
-          <Route path="/" element={<ShowBooks/>} />
-          <Route path="cart" element={<CartPage/>} />
+          <Route path="/" element={<ShowBooks />} />
+          <Route path="cart" element={<CartPage />} />
         </Routes>
       </Router>
     </div>

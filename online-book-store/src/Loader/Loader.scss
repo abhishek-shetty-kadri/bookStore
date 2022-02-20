@@ -1,8 +1,27 @@
 .loader {
-    position: fixed;
-    top: 50%;
-    bottom: 50%;
-    left: 50%;
-    right: 50%;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  border: 7px solid lightcyan;
+  border-top-color: darkgray;
+  animation: loader-animation 1s linear 0.5s infinite;
 }
 
+.loader-container {
+  position: fixed;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  padding: 6px;
+  border-radius: 10px;
+  background-color: darkgray;
+}
+
+@keyframes loader-animation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
